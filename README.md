@@ -1,8 +1,12 @@
 # Pyramid Pooling implemented in PyTorch
 This Module implements Spatial Pyramid Pooling (SPP) and Temporal Pyramid Pooling (TPP) as described in different papers.
 
+**NOTE** This repo has been forked from <a href="https://github.com/revidee/pytorch-pyramid-pooling">Revidee's original</a> (which seems to no longer be under maintenance) to publish on Pypi. I (Eric Musa) take no credit for writing the Pyramid Pooling code, but could not find any information on Revidee to provide proper credit.
 
-![SPP-TPP Comparison](https://github.com/revidee/pytorch-pyramid-pooling/blob/master/comparison-spp-tpp.png "SPP-TPP Comparison")
+# The purpose of this fork is to continue maintenance of this package and post on Pypi
+
+
+![SPP-TPP Comparison](https://github.com/eric-musa/pytorch-pyramid-pooling/blob/master/comparison-spp-tpp.png "SPP-TPP Comparison")
 
 
 Temporal Pyramid Pooling:
@@ -13,7 +17,7 @@ Temporal Pyramid Pooling:
 Given an 2D input Tensor, Temporal Pyramid Pooling divides the input in **x** _stripes_ which **extend through the height** of the image and **width of roughly (input_width / x)**. These stripes are then each pooled with max- or avg-pooling to calculate the output.
 
 ### Animated Principle
-![TPP Visualization](https://github.com/revidee/pytorch-pyramid-pooling/blob/master/pytorch-tpp-visual.gif "TPP Visualization")
+![TPP Visualization](https://github.com/eric-musa/pytorch-pyramid-pooling/blob/master/pytorch-tpp-visual.gif "TPP Visualization")
 
 Spatial Pyramid Pooling:
 ------
