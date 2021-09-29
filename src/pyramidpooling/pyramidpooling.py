@@ -19,6 +19,8 @@ class PyramidPooling(nn.Module):
                                             which is the concentration of multi-level pooling
         """
         super().__init__()
+        assert all(isinstance(_, int) for _ in levels)
+        assert all(_ > 0 for _ in levels)
         self.levels = levels
         self.channels = channels
         self.mode = mode
@@ -33,6 +35,7 @@ class PyramidPooling(nn.Module):
         return out
     
     def forward(self, x, compress_single_dimensions=True):
+        assert isinstance(x, torch.Tensor)
         assert 2 <= len(x.shape) <= 4, "input x must be 2 dimensional (1 sample, 1 channel), 3 dimensional (1 sample, n channels | n samples, 1 channel) or 4 dimensional (n samples, n channels)"
         if len(x.shape) == 2:
             n_samples = 1

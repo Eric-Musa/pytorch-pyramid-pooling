@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pytorch-pyramid-pooling",
-    version="0.0.7",
+    version="0.0.9",
     author="Eric Musa",
     author_email="eric.musa17@gmail.com",
     description="A PyTorch implementation of Spatial and Temporal Pyramid Pooling",
