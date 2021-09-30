@@ -133,10 +133,11 @@ class SpatialPyramidPooling(PyramidPooling):
                 :param mode defines the underlying pooling mode to be used, can either be "max" or "avg"
 
                 :returns (forward) a tensor vector with shape [batch x channels x n],
-                                                    where n: sum(filter_amount*level*level) for each level in levels
+                                                    where n: sum(level*level) for each level in levels
                                                     which is the concentration of multi-level pooling
                 """
-        super(SpatialPyramidPooling, self).__init__(levels, channels=channels, mode=mode)
+        super(SpatialPyramidPooling, self).__init__(
+            levels, channels=channels, mode=mode, method='spatial')
 
 
 class TemporalPyramidPooling(PyramidPooling):
@@ -151,7 +152,7 @@ class TemporalPyramidPooling(PyramidPooling):
         :param mode defines the underlying pooling mode to be used, can either be "max" or "avg"
 
         :returns (forward) a tensor vector with shape [batch x channels x n],
-                                            where n: sum(filter_amount*level) for each level in levels
+                                            where n: sum(level) for each level in levels
                                             which is the concentration of multi-level pooling
         """
-        super(TemporalPyramidPooling, self).__init__(levels, channels=channels, mode=mode)
+        super(TemporalPyramidPooling, self).__init__(levels, channels=channels, mode=mode, method='temporal')
